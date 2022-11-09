@@ -1,0 +1,164 @@
+﻿@model Interesse
+@{
+    ViewData["Title"] = "Hotsite";
+}
+
+<div class="topo">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-6">
+            <h1>Iniciativa Saúde da Cidade</h1>
+            <p>Evento 1-
+                Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
+                hendrerit.
+            </p>
+            <p>Evento 2-
+                Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                legendos
+                at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+            </p>
+        </div>
+        <div class="col-6">
+            <img src="~/img/passagens-aereas-sao-paulo-capa2019-04.jpg" alt="Parque Ibirapuera" srcset="" width="500"
+                height="300">
+        </div>
+    </div>
+</div>
+<div class="middle">
+    <div class="row d-flex justify-content align-items-center">
+        <div class="col">
+            <h2>Entre em contato!</h2>
+            <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+
+            <form action="Home" method="POST" name="formCadastro" id="form" onsubmit="validar()">
+                <div>
+                    <label asp-for="Nome">Nome:</label>
+                    <input id="txtNome" type="text" class="form-control" asp-for="Nome" name="Nome"
+                        onblur="return validarNome();" />
+                </div>
+                <div>
+                    <label asp-for="Email">Email:</label>
+                    <input id="txtEmail" type="text" class="form-control" asp-for="Email" required />
+                </div>
+                <div>
+                    <label asp-for="Mensagem">Mensagem (opcional):</label>
+                    <textarea id="txtMensagem" type="text" class="form-control" asp-for="Mensagem" required></textarea>
+                </div>
+                <div>
+                    <input onclick="validarForm();" type="submit" value="Enviar" />
+                </div>
+            </form>
+        </div>
+
+        <div class="col">
+            <div class="row d-inline-flex justify-content-around align-items-center">
+                <div class="col">
+                    <img src="~/img/saudavel.jpg" alt="Dicas de vida saudável" width="50" height="50">
+                    <div class="content">
+                        <button class="btn" onclick="openModal('dv-modal1')">Vida saudável</button>
+                        </p>
+                    </div>
+                    <div id="dv-modal1" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1>Dicas de vida saudável</h1>
+                            </div>
+                            <div class="modal-body">
+                                <ul>Dica 1- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet eos fuga
+                                    quaerat magnam aperiam, perspiciatis iusto velit non dolore assumenda exercitationem
+                                    facere maiores veniam minus dolor culpa excepturi cumque suscipit.</ul>
+                                <ul>Dica 2- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur quidem
+                                    ex adipisci, velit accusantium voluptatem libero consequuntur voluptatum iure
+                                    distinctio ipsum molestiae repellat labore sapiente aliquam et cupiditate sunt
+                                    reprehenderit?</ul>
+                                <ul>Dica 3- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur quidem
+                                    ex adipisci, velit accusantium voluptatem libero consequuntur voluptatum iure
+                                    distinctio ipsum molestiae repellat labore sapiente aliquam et cupiditate sunt
+                                    reprehenderit?</ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" onclick="closeModal('dv-modal1')">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="~/img/apoiadores.jpg" alt="Apoiadores" width="50" height="50">
+                        <div class="content">
+                            <button class="btn" onclick="openModal('dv-modal2')">Apoiadores</button>
+                            </p>
+                        </div>
+                        <div id="dv-modal2" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1>Apoiadores</h1>
+                                </div>
+
+                                <div class="modal-body">
+                                    <ul>Apoiadores 1- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
+                                        eos
+                                        fuga
+                                        quaerat magnam aperiam, perspiciatis iusto velit non dolore assumenda
+                                        exercitationem
+                                        facere maiores veniam minus dolor culpa excepturi cumque suscipit.</ul>
+                                    <ul>Apoiadores 2- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+                                        quidem
+                                        ex adipisci, velit accusantium voluptatem libero consequuntur voluptatum iure
+                                        distinctio ipsum molestiae repellat labore sapiente aliquam et cupiditate sunt
+                                        reprehenderit?</ul>
+                                    <ul>Apoiadores 3- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+                                        quidem
+                                        ex adipisci, velit accusantium voluptatem libero consequuntur voluptatum iure
+                                        distinctio ipsum molestiae repellat labore sapiente aliquam et cupiditate sunt
+                                        reprehenderit?</ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn" onclick="closeModal('dv-modal2')">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="~/img/agenda.png" alt="Agenda de eventos" width="50" height="50">
+                            <div class="content">
+                                <button class="btn" onclick="openModal('dv-modal3')">Agenda de Eventos</button>
+                                </p>
+                            </div>
+                            <div id="dv-modal3" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1>Agenda de eventos</h1>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <ul>Evento 1- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
+                                            eos fuga
+                                            quaerat magnam aperiam, perspiciatis iusto velit non dolore assumenda
+                                            exercitationem
+                                            facere maiores veniam minus dolor culpa excepturi cumque suscipit.</ul>
+                                        <ul>Evento 2- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+                                            quidem
+                                            ex adipisci, velit accusantium voluptatem libero consequuntur voluptatum
+                                            iure
+                                            distinctio ipsum molestiae repellat labore sapiente aliquam et cupiditate
+                                            sunt
+                                            reprehenderit?</ul>
+                                        <ul>Evento 3- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+                                            quidem
+                                            ex adipisci, velit accusantium voluptatem libero consequuntur voluptatum
+                                            iure
+                                            distinctio ipsum molestiae repellat labore sapiente aliquam et cupiditate
+                                            sunt
+                                            reprehenderit?</ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" onclick="closeModal('dv-modal3')">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
